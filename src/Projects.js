@@ -11,11 +11,11 @@ import project6 from "./projects/project6.png";
 
 const projectsData = [
   {
-    title: "E-Commerce App (React & Firebase)",
-    description: "A modern e-commerce app with authentication, protected routes, and role-based access (admin & user), featuring product management, shopping cart, and responsive UI.",
+    title: "Tafhana Market (React & Firebase)",
+    description: "A live, production-deployed Arabic e-commerce PWA built with React.js, Vite, and Firebase, featuring product management, authentication, role-based access, shopping cart, order management, medical services, and responsive RTL design.",
     image: project6,
-    live: "https://attar-hub.vercel.app/",
-    github: "https://github.com/ahmadhamdy14/Attar-Hub",
+    live: "https://tafhana-market.vercel.app/",
+    github: "https://github.com/ahmadhamty14/Tafmana-Market",
   },
   {
     title: "CRUD App with javaScript",
@@ -38,14 +38,14 @@ const projectsData = [
     live: "#",
     github: "https://github.com/ael3ttar14/find-me",
   },
-   {
+  {
     title: "Portfolio Website",
     description: "Personal portfolio built with React and responsive design.",
     image: project1,
     live: "https://my-portfolio-five-gamma-68.vercel.app/",
     github: "https://github.com/ael3ttar14/my-portfolio",
   },
-   {
+  {
     title: "Light Gallery",
     description: "Responsive Photo Gallery with Lightbox (DOM Manipulation).",
     image: project5,
@@ -63,7 +63,7 @@ export default function Projects() {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
           } else {
-            entry.target.classList.remove("visible"); 
+            entry.target.classList.remove("visible");
           }
         });
       },

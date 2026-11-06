@@ -1,6 +1,6 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaFilePdf , FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaFilePdf, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import "./Header.css";
 
 export default function Header() {
@@ -8,36 +8,36 @@ export default function Header() {
   const location = useLocation();
   const [dark, setDark] = useState(false);
 
-useEffect(() => {
-  const savedTheme = localStorage.getItem("theme");
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
 
-  if (savedTheme === "light") {
-    document.documentElement.classList.remove("dark");
-    setDark(false);
-  } else {
-    // Dark هو الافتراضي
-    document.documentElement.classList.add("dark");
-    setDark(true);
-  }
-}, []);
+    if (savedTheme === "light") {
+      document.documentElement.classList.remove("dark");
+      setDark(false);
+    } else {
+      // Dark هو الافتراضي
+      document.documentElement.classList.add("dark");
+      setDark(true);
+    }
+  }, []);
 
-const toggleTheme = () => {
-  if (dark) {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  } else {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  }
-  setDark(!dark);
-};
+  const toggleTheme = () => {
+    if (dark) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
+    setDark(!dark);
+  };
   return (
     <header className="header">
       <nav className="nav">
         <p className="logo">Ahmad Hamdy</p>
-          <button onClick={toggleTheme} className="theme-toggle" title="Toggle Theme">
-            {dark ? "◐" : "◑" }
-          </button>
+        <button onClick={toggleTheme} className="theme-toggle" title="Toggle Theme">
+          {dark ? "◐" : "◑"}
+        </button>
         <div className="hamburger" onClick={() => setOpen(!open)}>
           &#9776;
         </div>
@@ -57,6 +57,14 @@ const toggleTheme = () => {
           </li>
           <li>
             <Link
+              to="/experience"
+              className={location.pathname === "/experience" ? "active" : ""}
+            >
+              Experience
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/contact"
               className={location.pathname === "/contact" ? "active" : ""}
             >
@@ -64,14 +72,14 @@ const toggleTheme = () => {
             </Link>
           </li>
           <li className="social-links">
-            <a href="/cv.pdf" download  
-              title="Download CV" 
+            <a href="/cv.pdf" download
+              title="Download CV"
               className="cv-btn">
-               <FaFilePdf/> 
+              <FaFilePdf />
             </a>
             <a href="https://github.com/ahmadhamdy14"
-              target="_blank" 
-              rel="noreferrer" 
+              target="_blank"
+              rel="noreferrer"
               title="github">
               <FaGithub />
             </a>
@@ -83,10 +91,10 @@ const toggleTheme = () => {
             >
               <FaLinkedin />
             </a>
-            <a href="https://wa.me/201069199985" 
-            target="_blank" 
-            rel="noreferrer" 
-            title="whatsapp">
+            <a href="https://wa.me/201069199985"
+              target="_blank"
+              rel="noreferrer"
+              title="whatsapp">
               <FaWhatsapp />
             </a>
           </li>
